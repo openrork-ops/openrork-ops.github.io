@@ -114,11 +114,11 @@
 
     .hero h1 {
       font-family: var(--font-head);
-      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
       font-weight: 800;
       line-height: 1.02;
       letter-spacing: -.03em;
-      max-width: 14ch;
+      max-width: 28ch;
       animation: fadeUp .7s .1s ease both;
     }
     .hero h1 em {
@@ -651,11 +651,11 @@
         <div class="stat-label">Ortalama ROI Artışı</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">8<span>+</span></div>
+        <div class="stat-num">4<span>+</span></div>
         <div class="stat-label">Yıllık Deneyim</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">12<span>M+</span></div>
+        <div class="stat-num">800K<span>₺</span></div>
         <div class="stat-label">Yönetilen Reklam Bütçesi</div>
       </div>
     </div>
@@ -723,9 +723,18 @@
       <div class="service-card">
         <div class="service-icon">📊</div>
         <h3>Analitik & Raporlama</h3>
-        <p>GA4, Search Console ve özel dashboard'larla tüm kanallarınızın performansını gerçek zamanlı izleyin.</p>
+        <p>GA4 ve Search Console entegrasyonuyla tüm kanallarınızın performansını ölçün, veriye dayalı kararlar alın.</p>
       </div>
-    </div>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Sıfırdan Web Sitesi Kurulumu</h3>
+        <p>İşletmenize özel, mobil uyumlu ve hızlı yüklenen web sitesi tasarımı ve yayına alma hizmeti.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Reklam Hesabı Kurulumu</h3>
+        <p>Google Ads ve Meta Business hesaplarınızı sıfırdan doğru yapılandırıyoruz; piksel, dönüşüm takibi ve kampanya altyapısını eksiksiz kuruyoruz.</p>
+      </div>
   </section>
 
   <!-- HOW IT WORKS -->
@@ -929,7 +938,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q">Raporlama nasıl yapılıyor? <span class="icon">+</span></button>
-        <div class="faq-a"><p>Tüm paketlerimizde aylık detaylı raporlama yer alır; Büyüme ve Kurumsal paketlerde haftalık özetler de sunulur. Gerçek zamanlı performansı izleyebileceğiniz özel bir dashboard erişimi sağlarız. Dilediğiniz zaman ekibimizle görüntülü toplantı planlayabilirsiniz.</p></div>
+        <div class="faq-a"><p>Tüm paketlerimizde aylık detaylı raporlama yer alır; Büyüme ve Kurumsal paketlerde haftalık özetler de sunulur.</p></div>
       </div>
     </div>
   </section>
@@ -978,8 +987,8 @@
       <div class="footer-col">
         <h5>İletişim</h5>
         <ul>
-          <li><a href="mailto:info@reklamgoogle.com">info@reklamgoogle.com</a></li>
-          <li><a href="tel:+902121234567">+90 212 123 45 67</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#167f7870795664737d7a777b717979717a733875797b"><span class="__cf_email__" data-cfemail="563f3830391624333d3a373b313939313a337835393b">[email&#160;protected]</span></a></li>
+
           <li><a href="#">İstanbul, Türkiye</a></li>
         </ul>
       </div>
@@ -995,7 +1004,7 @@
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver(entries => {
@@ -1039,11 +1048,4 @@
     const sections = document.querySelectorAll('section[id]');
     window.addEventListener('scroll', () => {
       let current = '';
-      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
-      document.querySelectorAll('.nav-links a').forEach(a => {
-        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--text)' : '';
-      });
-    });
-  </script>
-</body>
-</html>
+      sections.forEach(s => { if (window
