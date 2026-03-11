@@ -32,7 +32,6 @@
       overflow-x: hidden;
     }
 
-    /* ── NOISE OVERLAY ── */
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -40,7 +39,7 @@
       pointer-events: none; z-index: 9999; opacity: .4;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -49,34 +48,26 @@
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
-
     .nav-logo {
       font-family: var(--font-head);
       font-size: 1.4rem; font-weight: 800;
-      color: var(--text);
-      text-decoration: none;
+      color: var(--text); text-decoration: none;
       letter-spacing: -0.02em;
     }
     .nav-logo span { color: var(--accent); }
-
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a {
-      color: var(--muted); text-decoration: none;
-      font-size: .9rem; font-weight: 500;
-      transition: color .2s;
-    }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .9rem; font-weight: 500; transition: color .2s; }
     .nav-links a:hover { color: var(--text); }
-
     .nav-cta {
-      background: var(--accent);
-      color: #fff; border: none; cursor: pointer;
+      background: var(--accent); color: #fff;
+      border: none; cursor: pointer;
       padding: .65rem 1.5rem; border-radius: 6px;
       font-family: var(--font-body); font-size: .9rem; font-weight: 500;
       transition: background .2s, transform .15s;
     }
     .nav-cta:hover { background: var(--accent2); transform: translateY(-1px); }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex; flex-direction: column;
@@ -84,22 +75,16 @@
       padding: 8rem 6% 5rem;
       position: relative; overflow: hidden;
     }
-
     .hero-glow {
-      position: absolute;
-      width: 700px; height: 700px;
+      position: absolute; width: 700px; height: 700px;
       background: radial-gradient(circle, rgba(255,77,0,.18) 0%, transparent 70%);
-      top: -150px; right: -200px;
-      pointer-events: none;
+      top: -150px; right: -200px; pointer-events: none;
     }
     .hero-glow2 {
-      position: absolute;
-      width: 400px; height: 400px;
+      position: absolute; width: 400px; height: 400px;
       background: radial-gradient(circle, rgba(255,77,0,.08) 0%, transparent 70%);
-      bottom: 0; left: 10%;
-      pointer-events: none;
+      bottom: 0; left: 10%; pointer-events: none;
     }
-
     .hero-tag {
       display: inline-flex; align-items: center; gap: .5rem;
       background: rgba(255,77,0,.12);
@@ -111,35 +96,23 @@
       animation: fadeUp .6s ease both;
     }
     .hero-tag::before { content: '●'; font-size: .5rem; }
-
     .hero h1 {
       font-family: var(--font-head);
-      font-size: clamp(1.8rem, 3.5vw, 3rem);
-      font-weight: 800;
-      line-height: 1.02;
-      letter-spacing: -.03em;
-      max-width: 28ch;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 800; line-height: 1.02;
+      letter-spacing: -.03em; max-width: 14ch;
       animation: fadeUp .7s .1s ease both;
     }
-    .hero h1 em {
-      font-style: normal;
-      -webkit-text-stroke: 1px var(--accent);
-      color: transparent;
-    }
-
+    .hero h1 em { font-style: normal; -webkit-text-stroke: 1px var(--accent); color: transparent; }
     .hero-sub {
-      margin-top: 1.8rem;
-      color: var(--muted);
+      margin-top: 1.8rem; color: var(--muted);
       font-size: 1.1rem; max-width: 50ch; line-height: 1.7;
       animation: fadeUp .7s .2s ease both;
     }
-
     .hero-actions {
       display: flex; gap: 1rem; flex-wrap: wrap;
-      margin-top: 2.5rem;
-      animation: fadeUp .7s .3s ease both;
+      margin-top: 2.5rem; animation: fadeUp .7s .3s ease both;
     }
-
     .btn-primary {
       background: var(--accent); color: #fff;
       padding: .85rem 2rem; border-radius: 8px;
@@ -148,12 +121,7 @@
       transition: background .2s, transform .15s, box-shadow .2s;
       box-shadow: 0 4px 24px rgba(255,77,0,.3);
     }
-    .btn-primary:hover {
-      background: var(--accent2);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(255,77,0,.4);
-    }
-
+    .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,77,0,.4); }
     .btn-ghost {
       background: transparent; color: var(--text);
       padding: .85rem 2rem; border-radius: 8px;
@@ -162,443 +130,133 @@
       transition: border-color .2s, transform .15s;
     }
     .btn-ghost:hover { border-color: rgba(255,255,255,.25); transform: translateY(-2px); }
-
-    .hero-stats {
-      display: flex; gap: 3rem; flex-wrap: wrap;
-      margin-top: 5rem;
-      animation: fadeUp .7s .4s ease both;
-    }
-    .stat-item { }
-    .stat-num {
-      font-family: var(--font-head);
-      font-size: 2.4rem; font-weight: 800;
-      color: var(--text); line-height: 1;
-    }
+    .hero-stats { display: flex; gap: 3rem; flex-wrap: wrap; margin-top: 5rem; animation: fadeUp .7s .4s ease both; }
+    .stat-num { font-family: var(--font-head); font-size: 2.4rem; font-weight: 800; color: var(--text); line-height: 1; }
     .stat-num span { color: var(--accent); }
     .stat-label { color: var(--muted); font-size: .85rem; margin-top: .3rem; }
 
-    /* ── MARQUEE ── */
-    .marquee-wrap {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      overflow: hidden; padding: 1.2rem 0;
-      background: var(--surface);
-    }
-    .marquee-track {
-      display: flex; gap: 4rem;
-      animation: marquee 22s linear infinite;
-      width: max-content;
-    }
-    .marquee-item {
-      white-space: nowrap;
-      font-family: var(--font-head);
-      font-size: .95rem; font-weight: 600;
-      letter-spacing: .08em; text-transform: uppercase;
-      color: var(--muted);
-    }
+    /* MARQUEE */
+    .marquee-wrap { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; padding: 1.2rem 0; background: var(--surface); }
+    .marquee-track { display: flex; gap: 4rem; animation: marquee 22s linear infinite; width: max-content; }
+    .marquee-item { white-space: nowrap; font-family: var(--font-head); font-size: .95rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
     .marquee-item span { color: var(--accent); margin-right: 1.5rem; }
     @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    /* ── SECTION COMMONS ── */
+    /* SECTION COMMONS */
     section { padding: 7rem 6%; }
+    .section-label { display: inline-block; color: var(--accent); font-size: .82rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1.2rem; }
+    .section-title { font-family: var(--font-head); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; line-height: 1.1; letter-spacing: -.025em; }
+    .section-sub { color: var(--muted); font-size: 1rem; max-width: 55ch; line-height: 1.7; margin-top: 1rem; }
 
-    .section-label {
-      display: inline-block;
-      color: var(--accent); font-size: .82rem; font-weight: 600;
-      letter-spacing: .12em; text-transform: uppercase;
-      margin-bottom: 1.2rem;
-    }
-
-    .section-title {
-      font-family: var(--font-head);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 800; line-height: 1.1;
-      letter-spacing: -.025em;
-    }
-
-    .section-sub {
-      color: var(--muted); font-size: 1rem;
-      max-width: 55ch; line-height: 1.7;
-      margin-top: 1rem;
-    }
-
-    /* ── SERVICES ── */
+    /* SERVICES */
     #hizmetler { background: var(--surface); }
-
-    .services-header {
-      display: flex; align-items: flex-end;
-      justify-content: space-between; flex-wrap: wrap; gap: 2rem;
-      margin-bottom: 4rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 16px; overflow: hidden;
-    }
-
-    .service-card {
-      background: var(--surface);
-      padding: 2.5rem;
-      transition: background .2s;
-      cursor: default;
-      position: relative; overflow: hidden;
-    }
-    .service-card::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0;
-      height: 2px; width: 0;
-      background: var(--accent);
-      transition: width .3s ease;
-    }
+    .services-header { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .service-card { background: var(--surface); padding: 2.5rem; transition: background .2s; cursor: default; position: relative; overflow: hidden; }
+    .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; width: 0; background: var(--accent); transition: width .3s ease; }
     .service-card:hover { background: var(--surface2); }
     .service-card:hover::after { width: 100%; }
-
-    .service-icon {
-      width: 52px; height: 52px;
-      background: rgba(255,77,0,.1);
-      border: 1px solid rgba(255,77,0,.2);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1.5rem; font-size: 1.4rem;
-    }
-
-    .service-card h3 {
-      font-family: var(--font-head);
-      font-size: 1.2rem; font-weight: 700;
-      margin-bottom: .7rem;
-    }
-
+    .service-icon { width: 52px; height: 52px; background: rgba(255,77,0,.1); border: 1px solid rgba(255,77,0,.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.4rem; }
+    .service-card h3 { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; margin-bottom: .7rem; }
     .service-card p { color: var(--muted); font-size: .9rem; line-height: 1.6; }
 
-    /* ── HOW IT WORKS ── */
+    /* HOW IT WORKS */
     #nasil-calisir { background: var(--bg); }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem; margin-top: 4rem;
-    }
-
-    .step {
-      position: relative;
-      padding: 2rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      transition: transform .2s, border-color .2s;
-    }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 4rem; }
+    .step { position: relative; padding: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; transition: transform .2s, border-color .2s; }
     .step:hover { transform: translateY(-4px); border-color: rgba(255,77,0,.3); }
-
-    .step-num {
-      font-family: var(--font-head);
-      font-size: 3.5rem; font-weight: 800;
-      color: rgba(255,77,0,.15);
-      line-height: 1;
-      position: absolute; top: 1.5rem; right: 1.5rem;
-    }
-
-    .step h4 {
-      font-family: var(--font-head);
-      font-size: 1.1rem; font-weight: 700;
-      margin-bottom: .6rem; margin-top: 1rem;
-    }
+    .step-num { font-family: var(--font-head); font-size: 3.5rem; font-weight: 800; color: rgba(255,77,0,.15); line-height: 1; position: absolute; top: 1.5rem; right: 1.5rem; }
+    .step h4 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin-bottom: .6rem; margin-top: 1rem; }
     .step p { color: var(--muted); font-size: .88rem; line-height: 1.6; }
 
-    /* ── RESULTS ── */
+    /* RESULTS */
     #sonuclar { background: var(--surface); }
-
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem; margin-top: 4rem;
-    }
-
-    .result-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2.5rem;
-      transition: border-color .2s, transform .2s;
-    }
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 4rem; }
+    .result-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; transition: border-color .2s, transform .2s; }
     .result-card:hover { border-color: rgba(255,77,0,.3); transform: translateY(-4px); }
-
-    .result-metric {
-      font-family: var(--font-head);
-      font-size: 3rem; font-weight: 800;
-      color: var(--accent); line-height: 1;
-    }
-
-    .result-card h4 {
-      font-family: var(--font-head);
-      font-size: 1rem; font-weight: 700;
-      margin: .8rem 0 .5rem;
-    }
+    .result-metric { font-family: var(--font-head); font-size: 3rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .result-card h4 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; margin: .8rem 0 .5rem; }
     .result-card p { color: var(--muted); font-size: .85rem; line-height: 1.6; }
 
-    /* ── TESTIMONIALS ── */
+    /* TESTIMONIALS */
     #referanslar { background: var(--bg); }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem; margin-top: 4rem;
-    }
-
-    .testimonial {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2.5rem;
-      position: relative;
-    }
-
-    .testimonial::before {
-      content: '"';
-      font-family: var(--font-head);
-      font-size: 5rem; color: var(--accent);
-      line-height: 1; position: absolute;
-      top: 1.2rem; right: 2rem; opacity: .3;
-    }
-
-    .testimonial p {
-      font-size: .95rem; line-height: 1.7;
-      color: var(--text); margin-bottom: 1.5rem;
-    }
-
-    .testimonial-author {
-      display: flex; align-items: center; gap: 1rem;
-    }
-    .author-avatar {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 1rem; color: #fff;
-      flex-shrink: 0;
-    }
-    .author-name {
-      font-family: var(--font-head);
-      font-size: .95rem; font-weight: 700;
-    }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 4rem; }
+    .testimonial { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; position: relative; }
+    .testimonial::before { content: '"'; font-family: var(--font-head); font-size: 5rem; color: var(--accent); line-height: 1; position: absolute; top: 1.2rem; right: 2rem; opacity: .3; }
+    .testimonial p { font-size: .95rem; line-height: 1.7; color: var(--text); margin-bottom: 1.5rem; }
+    .testimonial-author { display: flex; align-items: center; gap: 1rem; }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; color: #fff; flex-shrink: 0; }
+    .author-name { font-family: var(--font-head); font-size: .95rem; font-weight: 700; }
     .author-role { color: var(--muted); font-size: .82rem; }
-
     .stars { color: var(--accent); font-size: .85rem; margin-bottom: 1rem; }
 
-    /* ── PRICING ── */
+    /* PRICING */
     #fiyatlar { background: var(--surface); }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 1.5rem; margin-top: 4rem; align-items: start;
-    }
-
-    .pricing-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 2.5rem;
-      position: relative;
-      transition: transform .2s;
-    }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; margin-top: 4rem; align-items: start; }
+    .pricing-card { background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; position: relative; transition: transform .2s; }
     .pricing-card:hover { transform: translateY(-4px); }
-    .pricing-card.featured {
-      border-color: var(--accent);
-      background: linear-gradient(160deg, rgba(255,77,0,.08) 0%, var(--bg) 60%);
-    }
-
-    .pricing-badge {
-      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-      background: var(--accent); color: #fff;
-      padding: .3rem 1rem; border-radius: 100px;
-      font-size: .78rem; font-weight: 600; white-space: nowrap;
-    }
-
-    .pricing-name {
-      font-family: var(--font-head);
-      font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem;
-    }
-
-    .pricing-price {
-      font-family: var(--font-head);
-      font-size: 2.8rem; font-weight: 800;
-      line-height: 1; margin: 1rem 0;
-    }
+    .pricing-card.featured { border-color: var(--accent); background: linear-gradient(160deg, rgba(255,77,0,.08) 0%, var(--bg) 60%); }
+    .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; padding: .3rem 1rem; border-radius: 100px; font-size: .78rem; font-weight: 600; white-space: nowrap; }
+    .pricing-name { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
+    .pricing-price { font-family: var(--font-head); font-size: 2.8rem; font-weight: 800; line-height: 1; margin: 1rem 0; }
     .pricing-price span { font-size: 1rem; font-weight: 400; color: var(--muted); }
-
     .pricing-desc { color: var(--muted); font-size: .88rem; margin-bottom: 2rem; }
-
     .pricing-features { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
-    .pricing-features li {
-      font-size: .9rem; color: var(--muted);
-      display: flex; align-items: center; gap: .6rem;
-    }
+    .pricing-features li { font-size: .9rem; color: var(--muted); display: flex; align-items: center; gap: .6rem; }
     .pricing-features li::before { content: '✓'; color: var(--accent); font-weight: 700; }
-
-    .pricing-btn {
-      display: block; text-align: center;
-      margin-top: 2rem; padding: .85rem;
-      border-radius: 10px; font-weight: 600;
-      text-decoration: none; transition: .2s;
-    }
-    .pricing-btn-outline {
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
+    .pricing-btn { display: block; text-align: center; margin-top: 2rem; padding: .85rem; border-radius: 10px; font-weight: 600; text-decoration: none; transition: .2s; }
+    .pricing-btn-outline { border: 1px solid var(--border); color: var(--text); }
     .pricing-btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-    .pricing-btn-filled {
-      background: var(--accent); color: #fff;
-      box-shadow: 0 4px 20px rgba(255,77,0,.3);
-    }
+    .pricing-btn-filled { background: var(--accent); color: #fff; box-shadow: 0 4px 20px rgba(255,77,0,.3); }
     .pricing-btn-filled:hover { background: var(--accent2); }
 
-    /* ── FAQ ── */
+    /* FAQ */
     #sss { background: var(--bg); }
-
     .faq-list { margin-top: 3.5rem; max-width: 760px; }
-
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .faq-q {
-      width: 100%; background: none; border: none;
-      color: var(--text); cursor: pointer;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.5rem 0; text-align: left;
-      font-family: var(--font-body); font-size: 1rem; font-weight: 500;
-      gap: 1rem;
-    }
-    .faq-q .icon {
-      width: 28px; height: 28px; border-radius: 50%;
-      border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; font-size: 1.1rem; color: var(--accent);
-      transition: transform .3s, background .2s;
-    }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: none; border: none; color: var(--text); cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; text-align: left; font-family: var(--font-body); font-size: 1rem; font-weight: 500; gap: 1rem; }
+    .faq-q .icon { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem; color: var(--accent); transition: transform .3s, background .2s; }
     .faq-item.open .faq-q .icon { transform: rotate(45deg); background: rgba(255,77,0,.1); }
-
-    .faq-a {
-      max-height: 0; overflow: hidden;
-      transition: max-height .35s ease, padding .35s ease;
-    }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
     .faq-a p { color: var(--muted); font-size: .92rem; line-height: 1.7; padding-bottom: 1.5rem; }
     .faq-item.open .faq-a { max-height: 300px; }
 
-    /* ── CTA ── */
-    #iletisim {
-      background: var(--bg);
-      text-align: center;
-    }
-
-    .cta-box {
-      max-width: 700px; margin: 0 auto;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 5rem 4rem;
-      position: relative; overflow: hidden;
-    }
-    .cta-box::before {
-      content: '';
-      position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(255,77,0,.15), transparent 70%);
-      pointer-events: none;
-    }
-
+    /* CTA */
+    #iletisim { background: var(--bg); text-align: center; }
+    .cta-box { max-width: 700px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 5rem 4rem; position: relative; overflow: hidden; }
+    .cta-box::before { content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,77,0,.15), transparent 70%); pointer-events: none; }
     .cta-box .section-title { font-size: clamp(1.8rem, 4vw, 2.8rem); }
     .cta-box .section-sub { margin: 1rem auto; text-align: center; }
-
-    .cta-form {
-      display: flex; gap: .75rem; flex-wrap: wrap;
-      justify-content: center; margin-top: 2.5rem;
-    }
-
-    .cta-input {
-      flex: 1; min-width: 220px;
-      background: var(--bg); border: 1px solid var(--border);
-      color: var(--text); padding: .85rem 1.2rem;
-      border-radius: 8px; font-family: var(--font-body); font-size: 1rem;
-      outline: none; transition: border-color .2s;
-    }
+    .cta-form { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; margin-top: 2.5rem; }
+    .cta-input { flex: 1; min-width: 220px; background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: .85rem 1.2rem; border-radius: 8px; font-family: var(--font-body); font-size: 1rem; outline: none; transition: border-color .2s; }
     .cta-input:focus { border-color: var(--accent); }
     .cta-input::placeholder { color: var(--muted); }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      padding: 4rem 6% 2rem;
-    }
-
-    .footer-top {
-      display: grid;
-      grid-template-columns: 2fr repeat(3, 1fr);
-      gap: 3rem; margin-bottom: 3rem;
-    }
-
+    /* FOOTER */
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 4rem 6% 2rem; }
+    .footer-top { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem; }
     .footer-brand p { color: var(--muted); font-size: .9rem; margin-top: 1rem; max-width: 30ch; line-height: 1.7; }
-
-    .footer-col h5 {
-      font-family: var(--font-head);
-      font-size: .9rem; font-weight: 700;
-      margin-bottom: 1.2rem; color: var(--text);
-    }
-
+    .footer-col h5 { font-family: var(--font-head); font-size: .9rem; font-weight: 700; margin-bottom: 1.2rem; color: var(--text); }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
     .footer-col ul a { color: var(--muted); text-decoration: none; font-size: .88rem; transition: color .2s; }
     .footer-col ul a:hover { color: var(--text); }
-
-    .footer-bottom {
-      border-top: 1px solid var(--border);
-      padding-top: 2rem;
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
-    }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     .footer-bottom p { color: var(--muted); font-size: .82rem; }
-
     .social-links { display: flex; gap: 1rem; }
-    .social-links a {
-      width: 36px; height: 36px;
-      border: 1px solid var(--border); border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--muted); text-decoration: none; font-size: .85rem;
-      transition: border-color .2s, color .2s;
-    }
+    .social-links a { width: 36px; height: 36px; border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--muted); text-decoration: none; font-size: .85rem; transition: border-color .2s, color .2s; }
     .social-links a:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .reveal {
-      opacity: 0; transform: translateY(30px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── HAMBURGER MOBILE ── */
-    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: .3rem; }
-    .nav-toggle span {
-      display: block; width: 24px; height: 2px;
-      background: var(--text); margin: 5px 0;
-      transition: .3s;
-    }
 
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .nav-toggle { display: block; }
       .footer-top { grid-template-columns: 1fr 1fr; }
       .hero h1 { font-size: 2.8rem; }
       .cta-box { padding: 3rem 2rem; }
     }
-
     @media (max-width: 480px) {
       .footer-top { grid-template-columns: 1fr; }
       .hero-stats { gap: 2rem; }
@@ -618,29 +276,19 @@
       <li><a href="#sss">SSS</a></li>
     </ul>
     <button class="nav-cta" onclick="document.getElementById('iletisim').scrollIntoView({behavior:'smooth'})">Ücretsiz Danışmanlık</button>
-    <button class="nav-toggle" aria-label="Menü">
-      <span></span><span></span><span></span>
-    </button>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-glow"></div>
     <div class="hero-glow2"></div>
-
     <div class="hero-tag">Türkiye'nin En Hızlı Büyüyen Dijital Ajansı</div>
-
     <h1>Markanızı <em>Dijital'de</em> Zirveye Taşıyoruz</h1>
-
-    <p class="hero-sub">
-      SEO, sosyal medya, Google Ads ve içerik pazarlamasıyla hedef kitlenize ulaşın. Ölçülebilir sonuçlar, şeffaf raporlama ve gerçek büyüme.
-    </p>
-
+    <p class="hero-sub">SEO, sosyal medya, Google Ads ve içerik pazarlamasıyla hedef kitlenize ulaşın. Ölçülebilir sonuçlar, şeffaf raporlama ve gerçek büyüme.</p>
     <div class="hero-actions">
       <a href="#iletisim" class="btn-primary">Hemen Başlayın →</a>
       <a href="#hizmetler" class="btn-ghost">Hizmetlerimizi İnceleyin</a>
     </div>
-
     <div class="hero-stats">
       <div class="stat-item">
         <div class="stat-num">250<span>+</span></div>
@@ -672,7 +320,6 @@
       <div class="marquee-item"><span>★</span> Marka Kimliği</div>
       <div class="marquee-item"><span>★</span> Web Analitik</div>
       <div class="marquee-item"><span>★</span> Influencer Marketing</div>
-      <!-- duplicate for seamless loop -->
       <div class="marquee-item"><span>★</span> SEO Optimizasyonu</div>
       <div class="marquee-item"><span>★</span> Google Ads</div>
       <div class="marquee-item"><span>★</span> Sosyal Medya Yönetimi</div>
@@ -693,7 +340,6 @@
       </div>
       <p class="section-sub reveal">Her hizmetimiz; veri odaklı strateji, yaratıcı içerik ve sürekli optimizasyon üzerine kurulu.</p>
     </div>
-
     <div class="services-grid reveal">
       <div class="service-card">
         <div class="service-icon">🔍</div>
@@ -735,6 +381,12 @@
         <h3>Reklam Hesabı Kurulumu</h3>
         <p>Google Ads ve Meta Business hesaplarınızı sıfırdan doğru yapılandırıyoruz; piksel, dönüşüm takibi ve kampanya altyapısını eksiksiz kuruyoruz.</p>
       </div>
+      <div class="service-card">
+        <div class="service-icon">🎬</div>
+        <h3>YouTube Altyazı & Dublaj</h3>
+        <p>YouTube videolarınız için profesyonel altyazı ekleme ve dublaj hizmeti; içeriklerinizi farklı dil ve kitlelere ulaştırın.</p>
+      </div>
+    </div>
   </section>
 
   <!-- HOW IT WORKS -->
@@ -742,7 +394,6 @@
     <span class="section-label reveal">Sürecimiz</span>
     <h2 class="section-title reveal">4 Adımda Sonuç</h2>
     <p class="section-sub reveal">Şeffaf ve tekrarlanabilir bir süreçle hızlı ilerliyoruz.</p>
-
     <div class="steps-grid">
       <div class="step reveal">
         <div class="step-num">01</div>
@@ -772,7 +423,6 @@
     <span class="section-label reveal">Sonuçlarımız</span>
     <h2 class="section-title reveal">Rakamlar Konuşuyor</h2>
     <p class="section-sub reveal">Müşterilerimizin elde ettiği gerçek sonuçlar.</p>
-
     <div class="results-grid">
       <div class="result-card reveal">
         <div class="result-metric">+%420</div>
@@ -787,7 +437,7 @@
       <div class="result-card reveal">
         <div class="result-metric">+%280</div>
         <h4>Lead Artışı</h4>
-        <p>B2B SaaS firması, içerik stratejimizle nitelikli potansiyel müşteri sayısını patlatttı.</p>
+        <p>B2B SaaS firması, içerik stratejimizle nitelikli potansiyel müşteri sayısını patlattı.</p>
       </div>
       <div class="result-card reveal">
         <div class="result-metric">%62↓</div>
@@ -802,7 +452,6 @@
     <span class="section-label reveal">Referanslar</span>
     <h2 class="section-title reveal">Müşterilerimiz Ne Diyor?</h2>
     <p class="section-sub reveal">250'den fazla memnun müşterinin deneyimleri.</p>
-
     <div class="testimonials-grid">
       <div class="testimonial reveal">
         <div class="stars">★★★★★</div>
@@ -815,7 +464,6 @@
           </div>
         </div>
       </div>
-
       <div class="testimonial reveal">
         <div class="stars">★★★★★</div>
         <p>Sosyal medya yönetimini devrettikten sonra hem zamanımız hem de etkileşimlerimiz katlandı. Artık sosyal medya gerçek müşteri getiriyor.</p>
@@ -823,14 +471,13 @@
           <div class="author-avatar">ZK</div>
           <div>
             <div class="author-name">Zeynep Kaya</div>
-            <div class="author-role">Kurucu, Mode&Co</div>
+            <div class="author-role">Kurucu, Mode&amp;Co</div>
           </div>
         </div>
       </div>
-
       <div class="testimonial reveal">
         <div class="stars">★★★★★</div>
-        <p>Google Ads bütçemizi boşa harcıyorduk. Reklam Google yapıyı düzeltti, harcamamız azaldı, geldiğimiz lead sayısı ise ikiye katlandı.</p>
+        <p>Google Ads bütçemizi boşa harcıyorduk. Reklam Google yapıyı düzeltti, harcamamız azaldı, lead sayısı ise ikiye katlandı.</p>
         <div class="testimonial-author">
           <div class="author-avatar">MC</div>
           <div>
@@ -847,7 +494,6 @@
     <span class="section-label reveal">Fiyatlandırma</span>
     <h2 class="section-title reveal">Sizi Büyütecek Paket</h2>
     <p class="section-sub reveal">Sözleşme yok, gizli ücret yok. Dilediğiniz zaman paket değiştirin.</p>
-
     <div class="pricing-grid">
       <div class="pricing-card reveal">
         <div class="pricing-name">🎯 Sadece Google Ads</div>
@@ -855,16 +501,15 @@
         <div class="pricing-desc">Yalnızca Google Ads yönetimi isteyen markalar için odaklı paket.</div>
         <ul class="pricing-features">
           <li>Google Ads Kampanya Kurulumu</li>
-          <li>Arama, Görüntülü & Alışveriş Ağı</li>
+          <li>Arama, Görüntülü &amp; Alışveriş Ağı</li>
           <li>Anahtar Kelime Araştırması</li>
-          <li>Reklam Metni Yazımı & A/B Testi</li>
-          <li>Teklif & Bütçe Optimizasyonu</li>
+          <li>Reklam Metni Yazımı &amp; A/B Testi</li>
+          <li>Teklif &amp; Bütçe Optimizasyonu</li>
           <li>Dönüşüm Takibi Kurulumu</li>
           <li>Aylık Detaylı Performans Raporu</li>
         </ul>
         <a href="#iletisim" class="pricing-btn pricing-btn-outline">Hemen Başla</a>
       </div>
-
       <div class="pricing-card reveal">
         <div class="pricing-name">Başlangıç</div>
         <div class="pricing-price">₺4.900 <span>/ ay</span></div>
@@ -878,24 +523,22 @@
         </ul>
         <a href="#iletisim" class="pricing-btn pricing-btn-outline">Hemen Başla</a>
       </div>
-
       <div class="pricing-card featured reveal">
         <div class="pricing-badge">En Popüler</div>
         <div class="pricing-name">Büyüme</div>
         <div class="pricing-price">₺9.900 <span>/ ay</span></div>
         <div class="pricing-desc">Ciddi büyüme hedefleyen markalar için.</div>
         <ul class="pricing-features">
-          <li>Tam SEO & Teknik Optimizasyon</li>
+          <li>Tam SEO &amp; Teknik Optimizasyon</li>
           <li>4 Sosyal Medya Kanalı</li>
           <li>Aylık 20 İçerik + Grafik</li>
-          <li>Google & Meta Ads Yönetimi</li>
+          <li>Google &amp; Meta Ads Yönetimi</li>
           <li>E-posta Pazarlama Otomasyonu</li>
           <li>Haftalık Performans Raporu</li>
           <li>Öncelikli Destek</li>
         </ul>
         <a href="#iletisim" class="pricing-btn pricing-btn-filled">Hemen Başla</a>
       </div>
-
       <div class="pricing-card reveal">
         <div class="pricing-name">Kurumsal</div>
         <div class="pricing-price">Özel <span>fiyat</span></div>
@@ -905,7 +548,7 @@
           <li>Influencer Marketing</li>
           <li>Özel İçerik Ekibi</li>
           <li>Çok Kanallı Strateji</li>
-          <li>Özel Dashboard & Analitik</li>
+          <li>Özel Dashboard &amp; Analitik</li>
           <li>Dedicated Account Manager</li>
           <li>7/24 Destek</li>
         </ul>
@@ -918,7 +561,6 @@
   <section id="sss">
     <span class="section-label reveal">Sık Sorulan Sorular</span>
     <h2 class="section-title reveal">Aklınızdaki Sorular</h2>
-
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q">Ne kadar sürede sonuç alabilirim? <span class="icon">+</span></button>
@@ -926,15 +568,15 @@
       </div>
       <div class="faq-item">
         <button class="faq-q">Asgari sözleşme süresi var mı? <span class="icon">+</span></button>
-        <div class="faq-a"><p>Hayır, uzun vadeli sözleşme zorunluluğumuz yoktur. Ancak dijital pazarlama çalışmalarının meyvelerini vermesi biraz zaman aldığından, en az 3 aylık çalışma yapılmasını öneririz. Dilediğiniz zaman faturalama dönemini tamamlayarak hizmetinizi sonlandırabilirsiniz.</p></div>
+        <div class="faq-a"><p>Hayır, uzun vadeli sözleşme zorunluluğumuz yoktur. Ancak dijital pazarlama çalışmalarının meyvelerini vermesi biraz zaman aldığından, en az 3 aylık çalışma yapılmasını öneririz.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Reklam bütçesi pakete dahil mi? <span class="icon">+</span></button>
-        <div class="faq-a"><p>Paket ücretleri sadece yönetim ve strateji hizmetini kapsar. Reklam harcamaları (Google, Meta vb.) platformlara doğrudan sizin tarafınızdan aktarılır; bu sayede bütçeniz üzerinde tam kontrolünüz olur ve herhangi bir komisyon alınmaz.</p></div>
+        <div class="faq-a"><p>Paket ücretleri sadece yönetim ve strateji hizmetini kapsar. Reklam harcamaları (Google, Meta vb.) platformlara doğrudan sizin tarafınızdan aktarılır; bu sayede bütçeniz üzerinde tam kontrolünüz olur.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Hangi sektörlere hizmet veriyorsunuz? <span class="icon">+</span></button>
-        <div class="faq-a"><p>E-ticaret, SaaS, sağlık, hukuk, eğitim, turizm, gayrimenkul ve daha pek çok sektörde deneyimimiz bulunmaktadır. Her sektörün dinamiklerine özel stratejiler geliştiririz. İlk görüşmede sektörünüzle ilgili referanslarımızı paylaşabiliriz.</p></div>
+        <div class="faq-a"><p>E-ticaret, SaaS, sağlık, hukuk, eğitim, turizm, gayrimenkul ve daha pek çok sektörde deneyimimiz bulunmaktadır. Her sektörün dinamiklerine özel stratejiler geliştiririz.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Raporlama nasıl yapılıyor? <span class="icon">+</span></button>
@@ -949,7 +591,6 @@
       <span class="section-label">Ücretsiz Danışmanlık</span>
       <h2 class="section-title">Büyümenizi Birlikte Planlayalım</h2>
       <p class="section-sub">E-postanızı bırakın, 24 saat içinde uzman ekibimiz sizi arasın.</p>
-
       <div class="cta-form">
         <input type="email" class="cta-input" placeholder="e-posta adresiniz" />
         <button class="btn-primary" onclick="handleCTA()">Ücretsiz Teklif Al →</button>
@@ -971,7 +612,7 @@
           <li><a href="#hizmetler">Google Ads</a></li>
           <li><a href="#hizmetler">Sosyal Medya</a></li>
           <li><a href="#hizmetler">İçerik Pazarlama</a></li>
-          <li><a href="#hizmetler">E-posta Pazarlama</a></li>
+          <li><a href="#hizmetler">YouTube Altyazı &amp; Dublaj</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -987,8 +628,7 @@
       <div class="footer-col">
         <h5>İletişim</h5>
         <ul>
-          <li><a href="/cdn-cgi/l/email-protection#167f7870795664737d7a777b717979717a733875797b"><span class="__cf_email__" data-cfemail="563f3830391624333d3a373b313939313a337835393b">[email&#160;protected]</span></a></li>
-
+          <li><a href="mailto:info@reklamgoogle.com">info@reklamgoogle.com</a></li>
           <li><a href="#">İstanbul, Türkiye</a></li>
         </ul>
       </div>
@@ -1004,15 +644,13 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Scroll reveal
+  <script>
     const reveals = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
     reveals.forEach(r => io.observe(r));
 
-    // FAQ accordion
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
@@ -1022,7 +660,6 @@
       });
     });
 
-    // Smooth nav
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const target = document.querySelector(a.getAttribute('href'));
@@ -1030,22 +667,15 @@
       });
     });
 
-    // CTA
     function handleCTA() {
       const input = document.querySelector('.cta-input');
-      if (!input.value || !input.value.includes('@')) {
-        input.style.borderColor = 'var(--accent)';
-        input.focus(); return;
-      }
+      if (!input.value || !input.value.includes('@')) { input.style.borderColor = 'var(--accent)'; input.focus(); return; }
       const btn = document.querySelector('.cta-form .btn-primary');
       btn.textContent = '✓ Talebiniz Alındı!';
       btn.style.background = '#22c55e';
       input.value = '';
       setTimeout(() => { btn.textContent = 'Ücretsiz Teklif Al →'; btn.style.background = ''; }, 3000);
     }
-
-    // Active nav link highlight
-    const sections = document.querySelectorAll('section[id]');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(s => { if (window
+  </script>
+</body>
+</html>
