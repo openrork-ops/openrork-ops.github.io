@@ -192,8 +192,8 @@
 
     /* PRICING */
     #fiyatlar { background: var(--surface); }
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; margin-top: 4rem; align-items: start; }
-    .pricing-card { background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; position: relative; transition: transform .2s; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; margin-top: 4rem; align-items: stretch; }
+    .pricing-card { background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; position: relative; transition: transform .2s; display: flex; flex-direction: column; }
     .pricing-card:hover { transform: translateY(-4px); }
     .pricing-card.featured { border-color: var(--accent); background: linear-gradient(160deg, rgba(255,77,0,.08) 0%, var(--bg) 60%); }
     .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; padding: .3rem 1rem; border-radius: 100px; font-size: .78rem; font-weight: 600; white-space: nowrap; }
@@ -201,7 +201,7 @@
     .pricing-price { font-family: var(--font-head); font-size: 2.8rem; font-weight: 800; line-height: 1; margin: 1rem 0; }
     .pricing-price span { font-size: 1rem; font-weight: 400; color: var(--muted); }
     .pricing-desc { color: var(--muted); font-size: .88rem; margin-bottom: 2rem; }
-    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: .75rem; flex: 1; }
     .pricing-features li { font-size: .9rem; color: var(--muted); display: flex; align-items: center; gap: .6rem; }
     .pricing-features li::before { content: '✓'; color: var(--accent); font-weight: 700; }
     .pricing-btn { display: block; text-align: center; margin-top: 2rem; padding: .85rem; border-radius: 10px; font-weight: 600; text-decoration: none; transition: .2s; }
@@ -506,7 +506,7 @@
       </div>
       <div class="pricing-card featured">
         <div class="pricing-badge">En Popüler</div>
-        <div class="pricing-name">Başlangıç</div>
+        <div class="pricing-name">Rutin</div>
         <div class="pricing-desc">Dijitale yeni adım atan markalar için.</div>
         <ul class="pricing-features">
           <li>SEO Temel Optimizasyon</li>
@@ -562,22 +562,18 @@
         <p>Hizmeti denemek için ilk videonuza ücretsiz altyazı veya dublaj uyguluyoruz. Süre sınırı yok.</p>
       </div>
       <div class="result-card">
-        <div class="result-metric" style="font-size:1.8rem;">₺150–₺300</div>
         <h4>Kısa Video (0–5 dk)</h4>
         <p>Shorts, tanıtım klipleri ve kısa içerikler için. Video sayısı arttıkça birim fiyat düşer.</p>
       </div>
       <div class="result-card">
-        <div class="result-metric" style="font-size:1.8rem;">₺400–₺700</div>
         <h4>Orta Video (5–20 dk)</h4>
         <p>Eğitim videoları, vlog ve ürün tanıtımları için. 5+ video siparişlerinde %15 indirim.</p>
       </div>
       <div class="result-card">
-        <div class="result-metric" style="font-size:1.8rem;">₺800+</div>
         <h4>Uzun Video (20 dk+)</h4>
         <p>Podcast, webinar ve uzun format içerikler için. Aylık paket anlaşmalarında özel fiyat.</p>
       </div>
       <div class="result-card" style="border-color: rgba(255,77,0,.3);">
-        <div class="result-metric" style="font-size:1.8rem;">Aylık Abonelik</div>
         <h4>Sabit Aylık Paket</h4>
         <p>Her ay düzenli video yükleyenler için. Video sayısı ve süreye göre sabit aylık ücret belirlenir; tek tek sipariş vermekten daha avantajlı.</p>
       </div>
@@ -656,7 +652,7 @@
       <div class="footer-col">
         <h5>İletişim</h5>
         <ul>
-          <li><a href="/cdn-cgi/l/email-protection#234a4d454c635146484f424e444c4c444f460d404c4e"><span class="__cf_email__" data-cfemail="2841464e47685a4d434449454f47474f444d064b4745">[email&#160;protected]</span></a></li>
+          <li><a href="mailto:info@reklamgoogle.com">info@reklamgoogle.com</a></li>
           <li><a href="#">İstanbul, Türkiye</a></li>
         </ul>
       </div>
