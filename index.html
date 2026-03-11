@@ -652,7 +652,7 @@
       <div class="footer-col">
         <h5>İletişim</h5>
         <ul>
-          <li><a href="mailto:info@reklamgoogle.com">info@reklamgoogle.com</a></li>
+          <li><span id="footer-email"></span></li>
           <li><a href="#">İstanbul, Türkiye</a></li>
         </ul>
       </div>
@@ -662,50 +662,82 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    document.querySelectorAll('.faq-q').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+
+  <script>
+    // E-posta adresini JS ile yaz — Cloudflare şifreleyemez
+    (function() {
+      var u = 'info';
+      var d = 'reklamgoogle.com';
+      var el = document.getElementById('footer-email');
+      if (el) {
+        el.innerHTML = '<a href="mailto:' + u + '@' + d + '" style="color:var(--muted);text-decoration:none;font-size:.88rem;">' + u + '@' + d + '</a>';
+      }
+    })();
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(function(i) { i.classList.remove('open'); });
         if (!isOpen) item.classList.add('open');
       });
     });
 
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var target = document.querySelector(a.getAttribute('href'));
         if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
       });
     });
 
+    // Formspree form + başarı mesajı
     function handleCTA() {
-      const input = document.querySelector('.cta-input');
-      if (!input.value || !input.value.includes('@')) {
+      var input = document.querySelector('.cta-input');
+      var emailVal = input.value.trim();
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(emailVal)) {
         input.style.borderColor = 'var(--accent)';
         input.focus();
         return;
       }
-      const btn = document.querySelector('.cta-form .btn-primary');
+
+      var btn = document.querySelector('.cta-form .btn-primary');
       btn.textContent = 'Gönderiliyor...';
       btn.disabled = true;
+      input.disabled = true;
 
       fetch('https://formspree.io/f/mvzwadqd', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ email: input.value })
+        body: JSON.stringify({ email: emailVal })
       })
-      .then(res => res.json())
-      .then(data => {
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
         if (data.ok) {
-          btn.textContent = '✓ Talebiniz Alındı!';
-          btn.style.background = '#22c55e';
-          input.value = '';
-          setTimeout(() => {
-            btn.textContent = 'Ücretsiz Teklif Al →';
-            btn.style.background = '';
-            btn.disabled = false;
-          }, 3000);
+          // Başarı mesajı göster
+          var form = document.querySelector('.cta-form');
+          form.innerHTML = '<div style="text-align:center;padding:1.5rem 0;">'
+            + '<div style="font-size:3rem;margin-bottom:1rem;">✅</div>'
+            + '<p style="font-family:var(--font-head);font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:.5rem;">Talebiniz Alındı!</p>'
+            + '<p style="color:var(--muted);font-size:.95rem;">24 saat içinde ekibimiz sizinle iletişime geçecek.</p>'
+            + '</div>';
         } else {
           btn.textContent = 'Hata! Tekrar Deneyin';
-          btn.style.background = '
+          btn.style.background = '#ef4444';
+          btn.disabled = false;
+          input.disabled = false;
+        }
+      })
+      .catch(function() {
+        btn.textContent = 'Hata! Tekrar Deneyin';
+        btn.style.background = '#ef4444';
+        btn.disabled = false;
+        input.disabled = false;
+      });
+    }
+  </script>
+</body>
+</html>
